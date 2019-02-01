@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set env variables for jellyfin
-export JELLYFIN_DATA="/tmp"
+export JELLYFIN_DATA="/config"
 export JELLYFIN_ADD_OPTS=""
 export FFMPEG="/usr/bin/ffmpeg"
 export FFPROBE="/usr/bin/ffprobe"
