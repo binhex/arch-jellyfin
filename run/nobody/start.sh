@@ -15,6 +15,7 @@ mv -f /config/users /config/config/ 2> /dev/null
 # move older data to new structure - temporary hack, remove in a few builds time
 mkdir -p /config/data
 find /config/data -maxdepth 1 -type f -exec mv {} /config/data/data/ \;
+mv -f /config/metadata /config/data/metadata/ 2> /dev/null
 mv -f /config/data/ScheduledTasks /config/data/data/ScheduledTasks/ 2> /dev/null
 mv -f /config/data/playlists /config/data/data/playlists/ 2> /dev/null
 mv -f /config/localization /config/data/ 2> /dev/null
