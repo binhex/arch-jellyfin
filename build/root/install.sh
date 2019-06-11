@@ -19,7 +19,7 @@ mv /tmp/scripts-master/shell/arch/docker/*.sh /root/
 ####
 
 # define pacman packages
-pacman_packages="dotnet-runtime imagemagick ffmpeg skia-sharp60 sqlite"
+pacman_packages="dotnet-runtime imagemagick skia-sharp60 sqlite"
 
 # install compiled packages using pacman
 if [[ ! -z "${pacman_packages}" ]]; then
@@ -40,6 +40,10 @@ source /root/aur.sh
 
 # remove dotket-sdk as this is only required to build jellyfin
 pacman -Ru dotnet-sdk --noconfirm
+
+# call custom install script
+# need to install older version of ffmpeg due to bug https://github.com/jellyfin/jellyfin/issues/1269
+source /root/custom.sh
 
 # container perms
 ####
@@ -101,6 +105,7 @@ rm /tmp/permissions_heredoc
 
 # cleanup
 yes|pacman -Scc
+pacman --noconfirm -Rns $(pacman -Qtdq) 2> /dev/null || true
 rm -rf /usr/share/locale/*
 rm -rf /usr/share/man/*
 rm -rf /usr/share/gtk-doc/*
