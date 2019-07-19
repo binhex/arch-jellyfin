@@ -1,5 +1,5 @@
 # download statically compiled ffmpeg
-/root/curly.sh -rc 6 -rw 10 -of /tmp/download.tar.xz --url https://www.johnvansickle.com/ffmpeg/old-releases/ffmpeg-4.0.3-64bit-static.tar.xz
+curly.sh -rc 6 -rw 10 -of /tmp/download.tar.xz --url https://www.johnvansickle.com/ffmpeg/old-releases/ffmpeg-4.0.3-64bit-static.tar.xz
 
 # unpack
 cd /tmp && tar -xvf /tmp/download.tar.xz
