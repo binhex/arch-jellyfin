@@ -13,7 +13,7 @@ curl --connect-timeout 5 --max-time 600 --retry 5 --retry-delay 0 --retry-max-ti
 unzip /tmp/scripts-master.zip -d /tmp
 
 # move shell scripts to /root
-mv /tmp/scripts-master/shell/arch/docker/*.sh /root/
+mv /tmp/scripts-master/shell/arch/docker/*.sh /usr/local/bin/
 
 # pacman packages
 ####
@@ -36,7 +36,7 @@ mkdir -p /var/empty && chmod -R 777 /var/empty
 aur_packages="jellyfin"
 
 # call aur install script (arch user repo)
-source /root/aur.sh
+source aur.sh
 
 # remove dotket-sdk as this is only required to build jellyfin
 pacman -Ru dotnet-sdk --noconfirm
@@ -97,7 +97,7 @@ EOF
 sed -i '/# PERMISSIONS_PLACEHOLDER/{
     s/# PERMISSIONS_PLACEHOLDER//g
     r /tmp/permissions_heredoc
-}' /root/init.sh
+}' init.sh
 rm /tmp/permissions_heredoc
 
 # env vars
