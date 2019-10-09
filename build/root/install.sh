@@ -19,7 +19,7 @@ mv /tmp/scripts-master/shell/arch/docker/*.sh /usr/local/bin/
 ####
 
 # define pacman packages
-pacman_packages="dotnet-runtime imagemagick skia-sharp60 sqlite"
+pacman_packages=""
 
 # install compiled packages using pacman
 if [[ ! -z "${pacman_packages}" ]]; then
@@ -38,8 +38,8 @@ aur_packages="jellyfin"
 # call aur install script (arch user repo)
 source aur.sh
 
-# remove dotket-sdk as this is only required to build jellyfin
-pacman -Ru dotnet-sdk --noconfirm
+# remove dotket-sdk and yarn as this is only required to build jellyfin
+pacman -Ru dotnet-sdk yarn --noconfirm
 
 # call custom install script
 # need to install older version of ffmpeg due to bug https://github.com/jellyfin/jellyfin/issues/1269
