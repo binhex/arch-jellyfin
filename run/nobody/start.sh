@@ -4,25 +4,8 @@
 config_path="/config"
 ffmpeg_file_path="/usr/bin/ffmpeg"
 
-# move older config to new structure - temporary hack, remove in a few builds time
-mkdir -p /config/config
-mv -f /config/dlna /config/config/ 2> /dev/null
-mv -f /config/logging.json /config/config/ 2> /dev/null
-mv -f /config/system.xml /config/config/ 2> /dev/null
-mv -f /config/users /config/config/ 2> /dev/null
-
-# move older data to new structure - temporary hack, remove in a few builds time delme 20190901
-mkdir -p /config/data
-find /config/data -maxdepth 1 -type f -exec mv {} /config/data/data/ \;
-mv -f /config/metadata /config/data/metadata/ 2> /dev/null
-mv -f /config/data/ScheduledTasks /config/data/data/ScheduledTasks/ 2> /dev/null
-mv -f /config/data/playlists /config/data/data/playlists/ 2> /dev/null
-mv -f /config/localization /config/data/ 2> /dev/null
-mv -f /config/root /config/data/root/ 2> /dev/null
-
-# move older data to new structure - temporary hack, remove in a few builds time
-mkdir -p /config/logs
-mv -f /config/log*.log /config/logs/ 2> /dev/null
+# create folders to store config, data, cache and logs
+mkdir -p /config/config /config/data /config/cache /config/logs
 
 # run jellyfin with arguments
 /usr/bin/dotnet /usr/lib/jellyfin/jellyfin.dll \
