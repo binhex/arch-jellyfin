@@ -39,7 +39,7 @@ aur_packages="jellyfin"
 source aur.sh
 
 # remove dotket-sdk and yarn as this is only required to build jellyfin
-pacman -Ru dotnet-sdk yarn --noconfirm
+pacman -Ru dotnet-sdk yarn git --noconfirm
 
 # call custom install script
 # need to install older version of ffmpeg due to bug https://github.com/jellyfin/jellyfin/issues/1269
