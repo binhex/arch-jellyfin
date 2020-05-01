@@ -42,7 +42,7 @@ source aur.sh
 ####
 
 # need to install older version of ffmpeg due to bug https://github.com/jellyfin/jellyfin/issues/1269
-ffmpeg_package_name="ffmpeg-4.0.3-static.tar.xz"
+ffmpeg_package_name="ffmpeg-old-static.tar.xz"
 
 # download statically linked ffmpeg
 curly.sh -rc 6 -rw 10 -of "/tmp/${ffmpeg_package_name}" -url "https://github.com/binhex/arch-packages/raw/master/static/${OS_ARCH}/${ffmpeg_package_name}"
