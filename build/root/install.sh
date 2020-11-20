@@ -61,7 +61,7 @@ source aur.sh
 ffmpeg_package_name="ffmpeg-old-static.tar.xz"
 
 # download statically linked ffmpeg
-curly.sh -of "/tmp/${ffmpeg_package_name}" -url "https://github.com/binhex/arch-packages/raw/master/static/${OS_ARCH}/${ffmpeg_package_name}"
+rcurl.sh -o "/tmp/${ffmpeg_package_name}" "https://github.com/binhex/arch-packages/raw/master/static/${OS_ARCH}/${ffmpeg_package_name}"
 
 # unpack and move binaries
 mkdir -p "/tmp/unpack" && tar -xvf "/tmp/${ffmpeg_package_name}" -C "/tmp/unpack"
