@@ -45,6 +45,19 @@ fi
 # create /var/empty to fix access denied message from dotnet during build of jellyfin
 mkdir -p /var/empty && chmod -R 777 /var/empty
 
+# delme - required to fix up cert issues when compiling .dot
+# custom
+####
+
+package_name="ca-certificates-mozilla.tar.zst"
+
+# download compiled libtorrent-ps (used by rtorrent-ps)
+rcurl.sh -o "/tmp/${package_name}" "https://github.com/binhex/arch-packages/raw/master/compiled/${OS_ARCH}/${package_name}"
+
+# install libtorrent-ps
+pacman -U "/tmp/${package_name}" --noconfirm
+# /delme - required to fix up cert issues when compiling .dot
+
 # aur packages
 ####
 
