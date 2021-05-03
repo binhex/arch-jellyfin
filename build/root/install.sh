@@ -52,7 +52,7 @@ mkdir -p /var/empty && chmod -R 777 /var/empty
 package_name="ca-certificates-mozilla.tar.zst"
 
 # download compiled libtorrent-ps (used by rtorrent-ps)
-rcurl.sh -o "/tmp/${package_name}" "https://github.com/binhex/arch-packages/raw/master/compiled/${OS_ARCH}/${package_name}"
+rcurl.sh -o "/tmp/${package_name}" "https://github.com/binhex/packages/raw/master/compiled/${OS_ARCH}/${package_name}"
 
 # install libtorrent-ps
 pacman -U "/tmp/${package_name}" --noconfirm
@@ -74,7 +74,7 @@ source aur.sh
 ffmpeg_package_name="ffmpeg-old-static.tar.xz"
 
 # download statically linked ffmpeg
-rcurl.sh -o "/tmp/${ffmpeg_package_name}" "https://github.com/binhex/arch-packages/raw/master/static/${OS_ARCH}/${ffmpeg_package_name}"
+rcurl.sh -o "/tmp/${ffmpeg_package_name}" "https://github.com/binhex/packages/raw/master/static/${OS_ARCH}/${ffmpeg_package_name}"
 
 # unpack and move binaries
 mkdir -p "/tmp/unpack" && tar -xvf "/tmp/${ffmpeg_package_name}" -C "/tmp/unpack"
