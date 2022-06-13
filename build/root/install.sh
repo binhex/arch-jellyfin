@@ -74,7 +74,7 @@ source aur.sh
 ####
 
 # need to install older version of ffmpeg due to bug https://github.com/jellyfin/jellyfin/issues/1269
-ffmpeg_package_name="ffmpeg-old-static.tar.xz"
+ffmpeg_package_name="ffmpeg-4.4.1-amd64-static.tar.xz"
 
 # download statically linked ffmpeg
 rcurl.sh -o "/tmp/${ffmpeg_package_name}" "https://github.com/binhex/packages/raw/master/static/${OS_ARCH}/ffmpeg/johnvansickle/${ffmpeg_package_name}"
