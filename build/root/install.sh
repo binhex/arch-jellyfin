@@ -54,10 +54,10 @@ mkdir -p /var/empty && chmod -R 777 /var/empty
 
 package_name="ca-certificates-mozilla.tar.zst"
 
-# download compiled libtorrent-ps (used by rtorrent-ps)
+# download mozilla certs
 rcurl.sh -o "/tmp/${package_name}" "https://github.com/binhex/packages/raw/master/compiled/${OS_ARCH}/${package_name}"
 
-# install libtorrent-ps
+# install mozilla certs
 pacman -U "/tmp/${package_name}" --noconfirm
 # /delme - required to fix up cert issues when compiling .dot
 
@@ -65,23 +65,10 @@ pacman -U "/tmp/${package_name}" --noconfirm
 ####
 
 # define aur packages
-aur_packages="jellyfin"
+aur_packages="jellyfin-ffmpeg5 jellyfin"
 
 # call aur install script (arch user repo)
 source aur.sh
-
-# custom
-####
-
-# need to install older version of ffmpeg due to bug https://github.com/jellyfin/jellyfin/issues/1269
-ffmpeg_package_name="ffmpeg-4.4.1-amd64-static.tar.xz"
-
-# download statically linked ffmpeg
-rcurl.sh -o "/tmp/${ffmpeg_package_name}" "https://github.com/binhex/packages/raw/master/static/${OS_ARCH}/ffmpeg/johnvansickle/${ffmpeg_package_name}"
-
-# unpack and move binaries
-mkdir -p "/tmp/unpack" && tar -xvf "/tmp/${ffmpeg_package_name}" -C "/tmp/unpack"
-mv /tmp/unpack/ffmpeg*/ff* "/usr/bin/"
 
 # container perms
 ####
