@@ -65,7 +65,7 @@ pacman -U "/tmp/${package_name}" --noconfirm
 ####
 
 # define aur packages
-aur_packages="jellyfin-ffmpeg5 jellyfin"
+aur_packages="jellyfin-ffmpeg5 jellyfin-bin"
 
 # call aur install script (arch user repo)
 source aur.sh
