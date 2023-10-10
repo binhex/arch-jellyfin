@@ -36,7 +36,7 @@ mv /tmp/scripts-master/shell/arch/docker/*.sh /usr/local/bin/
 ####
 
 # define pacman packages
-pacman_packages="git libva-intel-driver intel-media-driver intel-media-sdk onevpl-intel-gpu intel-compute-runtime"
+pacman_packages="git libva-intel-driver intel-media-driver intel-media-sdk onevpl-intel-gpu intel-compute-runtime jellyfin-server jellyfin-ffmpeg"
 
 # install compiled packages using pacman
 if [[ ! -z "${pacman_packages}" ]]; then
@@ -63,7 +63,7 @@ pacman -U "/tmp/${package_name}" --noconfirm
 ####
 
 # define aur packages
-aur_packages="jellyfin-ffmpeg5 jellyfin-bin"
+aur_packages=""
 
 # call aur install script (arch user repo)
 source aur.sh
