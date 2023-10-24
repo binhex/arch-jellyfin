@@ -36,7 +36,7 @@ mv /tmp/scripts-master/shell/arch/docker/*.sh /usr/local/bin/
 ####
 
 # define pacman packages
-pacman_packages="git libva-intel-driver intel-media-driver intel-media-sdk onevpl-intel-gpu intel-compute-runtime jellyfin-server jellyfin-ffmpeg"
+pacman_packages="git libva-intel-driver intel-media-driver intel-media-sdk onevpl-intel-gpu intel-compute-runtime jellyfin-server jellyfin-web jellyfin-ffmpeg"
 
 # install compiled packages using pacman
 if [[ ! -z "${pacman_packages}" ]]; then
@@ -72,7 +72,7 @@ source aur.sh
 ####
 
 # define comma separated list of paths
-install_paths="/usr/lib/jellyfin,/var/lib/jellyfin,/home/nobody"
+install_paths="/usr/lib/jellyfin,/usr/lib/jellyfin-ffmpeg,/var/lib/jellyfin,/home/nobody"
 
 # split comma separated string into list for install paths
 IFS=',' read -ra install_paths_list <<< "${install_paths}"
