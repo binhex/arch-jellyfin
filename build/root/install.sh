@@ -35,6 +35,9 @@ mv /tmp/scripts-master/shell/arch/docker/*.sh /usr/local/bin/
 # pacman packages
 ####
 
+# call pacman db and package updater script
+source upd.sh
+
 # define pacman packages
 pacman_packages="git libva-intel-driver intel-media-driver intel-media-sdk onevpl-intel-gpu intel-compute-runtime jellyfin-server jellyfin-web jellyfin-ffmpeg"
 
