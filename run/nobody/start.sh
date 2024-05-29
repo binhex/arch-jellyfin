@@ -2,7 +2,7 @@
 
 # specify argument values
 config_path="/config"
-webdir="/usr/share/jellyfin-web"
+webdir="/usr/share/jellyfin/web"
 ffmpeg_file_path="/usr/lib/jellyfin-ffmpeg/ffmpeg"
 
 # create folders to store config, data, cache and logs
