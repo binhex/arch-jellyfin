@@ -1,6 +1,6 @@
 FROM binhex/arch-base:latest
-LABEL org.opencontainers.image.authors = "binhex"
-LABEL org.opencontainers.image.source = "https://github.com/binhex/arch-jellyfin"
+LABEL org.opencontainers.image.authors="binhex"
+LABEL org.opencontainers.image.source="https://github.com/binhex/arch-jellyfin"
 
 # release tag name from buildx arg
 ARG RELEASETAG
@@ -34,7 +34,7 @@ RUN chmod +x /root/*.sh /home/nobody/*.sh && \
 EXPOSE 8096
 
 # set environment variables for user nobody
-ENV HOME /home/nobody
+ENV HOME=/home/nobody
 
 # set permissions
 #################
