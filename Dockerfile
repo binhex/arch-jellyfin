@@ -30,9 +30,6 @@ RUN chmod +x /root/*.sh /home/nobody/*.sh && \
 # docker settings
 #################
 
-# expose port for server
-EXPOSE 8096
-
 # set environment variables for user nobody
 ENV HOME=/home/nobody
 
