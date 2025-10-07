@@ -70,15 +70,6 @@ rcurl.sh -o "/tmp/${package_name}" "https://github.com/binhex/packages/raw/maste
 pacman -U "/tmp/${package_name}" --noconfirm
 # /delme - required to fix up cert issues when compiling .dot
 
-# aur packages
-####
-
-# define aur packages
-aur_packages=""
-
-# call aur install script (arch user repo)
-source aur.sh
-
 # container perms
 ####
 
