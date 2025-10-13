@@ -57,19 +57,6 @@ fi
 # create /var/empty to fix access denied message from dotnet during build of jellyfin
 mkdir -p /var/empty && chmod -R 777 /var/empty
 
-# delme - required to fix up cert issues when compiling .dot
-# custom
-####
-
-package_name="ca-certificates-mozilla.tar.zst"
-
-# download mozilla certs
-rcurl.sh -o "/tmp/${package_name}" "https://github.com/binhex/packages/raw/master/compiled/${TARGETARCH}/${package_name}"
-
-# install mozilla certs
-pacman -U "/tmp/${package_name}" --noconfirm
-# /delme - required to fix up cert issues when compiling .dot
-
 # container perms
 ####
 
