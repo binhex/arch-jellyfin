@@ -43,7 +43,7 @@ refresh.sh
 source upd.sh
 
 # define pacman packages
-pacman_packages="git libva-intel-driver intel-media-driver intel-media-sdk onevpl-intel-gpu intel-compute-runtime jellyfin-server jellyfin-web jellyfin-ffmpeg"
+pacman_packages="git libva-intel-driver intel-media-driver intel-media-sdk onevpl-intel-gpu intel-compute-runtime jellyfin-server jellyfin-web jellyfin-ffmpeg noto-fonts"
 
 # install compiled packages using pacman
 if [[ -n "${pacman_packages}" ]]; then
