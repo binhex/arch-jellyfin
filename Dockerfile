@@ -11,6 +11,10 @@ ARG RELEASETAG
 # arch from buildx --platform, e.g. amd64
 ARG TARGETARCH
 
+# jellyfin install source, 'upstream' downloads the latest jellyfin release direct from
+# jellyfin, 'arch' installs the jellyfin packages from the arch repositories
+ARG JELLYFIN_SOURCE=upstream
+
 # additional files
 ##################
 

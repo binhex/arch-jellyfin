@@ -14,7 +14,12 @@ build something better and work together to achieve it.
 
 ## Build notes
 
-Latest stable Jellyfin release from AUR.
+Latest stable Jellyfin release, downloaded directly from the official Jellyfin
+release repositories rather than waiting for the Arch Linux packages to be
+rebuilt, so new releases are picked up as soon as Jellyfin publish them.
+
+To build from the Arch Linux packages instead, pass the build argument
+`JELLYFIN_SOURCE=arch`.
 
 ## Usage
 
