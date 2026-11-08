@@ -5,6 +5,9 @@ config_path="/config"
 webdir="/usr/share/jellyfin/web"
 ffmpeg_file_path="/usr/lib/jellyfin-ffmpeg/ffmpeg"
 
+# Disable glibc dynamic heap adjustment
+export MALLOC_TRIM_THRESHOLD_=131072
+
 # create folders to store config, data, cache and logs
 mkdir -p /config/config /config/data /config/cache /config/logs
 
